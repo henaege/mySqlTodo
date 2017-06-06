@@ -49,4 +49,10 @@ router.get('/delete/:id', (req, res)=> {
   });
 });
 
+
+// router.get('/edit/:id', (req, res)=> {
+//   var idToEdit = req.params.id;
+//   var editQuery = "UPDATE tasks SET taskName = "
+// })
+
 module.exports = router;

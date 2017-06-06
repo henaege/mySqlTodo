@@ -14,9 +14,14 @@ h3 {
 
 .container {
   margin-top: 10px;
+  height: 100vh;
 }
 
 
 .input-group {
   margin: 20px;
+}
+
+td {
+  overflow: scroll;
 }
