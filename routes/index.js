@@ -33,9 +33,9 @@ router.post('/addItem', (req, res)=> {
   // res.json(req.body)
   var newTask = req.body.newTask;
   var dueDate = req.body.newTaskDate;
-  var insertQuery = "INSERT INTO tasks (taskName, taskDate) VALUES ('"+newTask+"','"+dueDate+"');";
+  var insertQuery = "INSERT INTO tasks (taskName, taskDate) VALUES (?,?);";
   // res.send(insertQuery);
-  connection.query(insertQuery, (error, results)=> {
+  connection.query(insertQuery, [newTask, dueDate], (error, results)=> {
     if(error) throw error;
     res.redirect('/?msg=added');
   })
