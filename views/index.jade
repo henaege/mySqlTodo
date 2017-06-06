@@ -2,10 +2,47 @@ doctype html
 html
   head
   title My Site
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
   link(rel='stylesheet', href='stylesheets/style.css')
   
     
 
 block content
-  h1= title
-  p Welcome to Jade
+  div.container
+    div.row
+     div.col-sm-12.text-center
+      h1 Your ToDo 
+      h3= message
+      
+      form.form-inline(action="/addItem" method="post")
+        div.form-group
+          div.input-group
+            input.form-control(type="text" name="newTask" placeholder="new task...")
+          div.input-group
+            input.form-control(type="date" name="newTaskDate")
+        button.btn.btn-success(type="submit")  Add new Task
+
+      div.row
+        div.col-sm-12.text-center
+          table.table
+            thead
+              tr
+                th.text-center Task Name
+                th.text-center Task Due Date
+                th.text-center Edit
+                th.text-center Delete
+            tbody
+            - each val in taskArray
+
+                tr.text-center
+                  td= val.taskName
+                  td= val.taskDate
+                  td
+                    a(href="")
+                      button.btn.btn-warning Edit
+                  td
+                    a(href="/delete/#{val.id}")
+                      button.btn.btn-danger Delete
+            
+    //- <a href="/delete/taskArray[i].id"><button>
+

@@ -1,12 +1,22 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: teal;
+  background: radial-gradient(circle at 50% 0%, white 1%, Teal 100%);
 }
 
 h1 {
-  color: blue;
+  color: black;
+}
+h3 {
+  color: black;
 }
 
-a {
-  color: #00B7FF;
+.container {
+  margin-top: 10px;
+}
+
+
+.input-group {
+  margin: 20px;
 }
